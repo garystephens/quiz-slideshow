@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'normalize.css';
-import '../styles/styles.scss';
 import QuizSlideshowApp from './ui/quizSlideshowApp.js';
 
 function injectApplication() {

@@ -5,6 +5,7 @@ Instructions - include screenshot of data in spreadsheet
 Indicate no support for IE? Or get it working (slideshow keys)
 
 OTHERS
+Handle images being 404s
 Add title text to localStorage
 Add link to answers from question summary slide?
 Support long questions / answers (smaller font)? https://www.npmjs.com/package/react-textfit
