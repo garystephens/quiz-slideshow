@@ -1,12 +1,13 @@
 BEFORE ADVERTISING
-Upload to github but don't promote yet
+Preview to Angus
 Test with a mix of spreadsheet data (Excel & Google)
 Instructions - include screenshot of data in spreadsheet
 Indicate no support for IE? Or get it working (slideshow keys)
 
 OTHERS
+Remove packages for compiling SCSS?
 Handle images being 404s
-Add title text to localStorage
+Presist title text to localStorage
 Add link to answers from question summary slide?
 Support long questions / answers (smaller font)? https://www.npmjs.com/package/react-textfit
 Styling
@@ -19,3 +20,4 @@ Choose styling - save to localStorage
 Set footer text - save to localStorage
 Allow customise colours, add preview of slideshow
 Esc equivalent on touchscreen?
+Add Storybook

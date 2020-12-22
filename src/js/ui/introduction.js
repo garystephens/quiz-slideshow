@@ -22,7 +22,7 @@ function QuizSlideshowIntroduction() {
             answers. And show pictures too, if you like.
             <br />
             <br />
-            Press the buttons below to see a short sample quiz...
+            Press the buttons below to see a sample quiz round...
             <br />
         </Introduction>
     );

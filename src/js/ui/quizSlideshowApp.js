@@ -142,7 +142,7 @@ function QuizSlideshowApp() {
                             onChange={handleChangeToQuizDataAsString}
                             width="90%"
                             height="100px"
-                            coveringText="To avoid contestants seeing the questions/answers by accident, the data you paste into this box will only become visible when you click into this box."
+                            coveringText="To avoid contestants seeing the questions/answers by accident, the data you paste into this box will only bec visible when you click into this box."
                         />
                         {quizDataAsArray === undefined && (
                             <ErrorInDataMessage />
