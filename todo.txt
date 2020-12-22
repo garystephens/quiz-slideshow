@@ -5,7 +5,7 @@ Instructions - include screenshot of data in spreadsheet
 Indicate no support for IE? Or get it working (slideshow keys)
 
 OTHERS
-Remove packages for compiling SCSS?
+Remove unused packages, rc-slider, packages for compiling SCSS, etc.?
 Handle images being 404s
 Presist title text to localStorage
 Add link to answers from question summary slide?
