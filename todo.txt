@@ -1,0 +1,20 @@
+BEFORE ADVERTISING
+Upload to github but don't promote yet
+Test with a mix of spreadsheet data (Excel & Google)
+Instructions - include screenshot of data in spreadsheet
+Indicate no support for IE? Or get it working (slideshow keys)
+
+OTHERS
+Add title text to localStorage
+Add link to answers from question summary slide?
+Support long questions / answers (smaller font)? https://www.npmjs.com/package/react-textfit
+Styling
+Clean up code
+Animate transitions
+Fancier font
+Make answer column optional
+Use key in place of keyCode?
+Choose styling - save to localStorage
+Set footer text - save to localStorage
+Allow customise colours, add preview of slideshow
+Esc equivalent on touchscreen?
