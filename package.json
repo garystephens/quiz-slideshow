@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "rmdir /s /q dist && webpack --mode development",
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --mode development --open",
+        "start": "cross-env NODE_ENV=dev webpack-dev-server --mode development --env development --open",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     },
@@ -27,7 +27,9 @@
         "@babel/preset-react": "^7.12.10",
         "babel-loader": "^8.2.2",
         "babel-plugin-styled-components": "^1.12.0",
+        "clean-webpack-plugin": "^3.0.0",
         "copy-webpack-plugin": "^7.0.0",
+        "cross-env": "^7.0.3",
         "css-loader": "^5.0.1",
         "eslint": "^7.16.0",
         "eslint-config-prettier": "^7.1.0",

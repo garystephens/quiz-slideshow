@@ -40,7 +40,7 @@ const FullScreen = styled.div`
 `;
 const StyledSlideshow = styled(FullScreen)`
     color: white;
-    background: rgb(1, 1, 60);
+    background: #000020;
     display: flex;
     flex-flow: column;
 `;

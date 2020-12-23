@@ -15,7 +15,9 @@ function SpreadsheetInstructions() {
             <br />
             Your spreadsheet data (from Excel, Google Sheets, etc.) must have
             one row per question.
-            {/* TODO - add image of spreadsheet data */}
+            <br />
+            <br />
+            <img src="images/spreadsheet-copy.png" />
             <br />
             <br />
             The columns in the spreadsheet data you copy must be, in order:

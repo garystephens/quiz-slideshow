@@ -24,13 +24,15 @@ function parseQuizDataString(questionData) {
         let questionsOutput = [];
         questions.forEach(function (question) {
             const questionData = question.split('\t');
-            questionsOutput.push({
-                number: questionData[0],
-                questionText: trimDoubleQuotes(questionData[1]),
-                answerText: trimDoubleQuotes(questionData[2]),
-                questionImage: questionData[3],
-                answerImage: questionData[4],
-            });
+            if (questionData.length >= 3) {
+                questionsOutput.push({
+                    number: questionData[0],
+                    questionText: trimDoubleQuotes(questionData[1]),
+                    answerText: trimDoubleQuotes(questionData[2]),
+                    questionImage: questionData[3],
+                    answerImage: questionData[4],
+                });
+            }
         });
 
         return questionsOutput;

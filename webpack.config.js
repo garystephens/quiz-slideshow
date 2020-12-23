@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/js/main.js',
@@ -8,22 +9,23 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
     },
-    target: ['web', 'es5'],
+    target: process.env.NODE_ENV === 'dev' ? 'web' : ['web', 'es5'],
     devtool: 'source-map',
     devServer: {
         contentBase: './dist',
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
         }),
-        // new CopyWebpackPlugin({
-        //     patterns: [
-        //         { from: './src/images', to: './images' },
-        //         { from: './src/favicons', to: './favicons' },
-        //     ],
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: './src/images', to: './images' },
+                //         { from: './src/favicons', to: './favicons' },
+            ],
+        }),
     ],
     module: {
         rules: [

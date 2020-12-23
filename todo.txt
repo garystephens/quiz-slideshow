@@ -1,8 +1,6 @@
 BEFORE ADVERTISING
-Preview to some quizmasters
-Test with a mix of spreadsheet data (Excel & Google)
-Instructions - include screenshot of data in spreadsheet
-Indicate no support for IE? Or get it working (slideshow keys)
+Preview to some quizmasters, beta testers
+Add favicon
 
 OTHERS
 Handle images being 404s
