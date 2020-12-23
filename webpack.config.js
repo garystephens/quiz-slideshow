@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash].js',
     },
+    target: ['web', 'es5'],
     devtool: 'source-map',
     devServer: {
         contentBase: './dist',

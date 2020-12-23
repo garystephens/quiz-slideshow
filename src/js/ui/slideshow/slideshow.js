@@ -97,6 +97,7 @@ function Slideshow(props) {
     useKeypress(
         [
             'Escape',
+            'Esc',
             'ArrowRight',
             'Right',
             'ArrowLeft',
@@ -108,10 +109,12 @@ function Slideshow(props) {
             'X',
             'x',
             ' ',
+            'Spacebar',
         ],
         (event) => {
             switch (event.key) {
                 case 'Escape':
+                case 'Esc':
                 case 'X':
                 case 'x':
                     props.onEndSlideshow();
@@ -121,6 +124,7 @@ function Slideshow(props) {
                 case 'Right':
                 case 'Down':
                 case ' ':
+                case 'Spacebar':
                     incrementSlideIndex();
                     break;
                 case 'ArrowLeft':
