@@ -30,16 +30,16 @@ function SpreadsheetInstructions() {
                     <em>Question</em>
                 </li>
                 <li>
-                    <em>Answer</em>
+                    <em>Answer</em> (leave cells blank if you only want to show
+                    questions)
                 </li>
             </ol>
             and optionally:
             <ol start="4">
                 <li>
                     <em>Question Image</em> - web address (URL) of image to be
-                    shown alongside the question and answer, and also alongside
-                    the answer (unless a different image is set for the answer
-                    in the next column)
+                    shown alongside the question and answer (unless a different
+                    image is set for the answer in the next column)
                 </li>
                 <li>
                     <em>Answer Image</em> - web address of image to be shown

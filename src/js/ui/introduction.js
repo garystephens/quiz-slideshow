@@ -11,6 +11,9 @@ const Introduction = styled.div`
 function QuizSlideshowIntroduction() {
     return (
         <Introduction>
+            <div style={{ float: 'right', paddingLeft: '8px' }}>
+                <img src="images/sample-slideshow-small.png" width="250" />
+            </div>
             <em>
                 Easily turn your spreadsheet of questions and answers into an
                 attractive slideshow for use at quiz events, both online and
@@ -24,6 +27,7 @@ function QuizSlideshowIntroduction() {
             <br />
             Press the buttons below to see a sample quiz round...
             <br />
+            <div style={{ clear: 'both ' }}></div>
         </Introduction>
     );
 }

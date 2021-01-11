@@ -1,6 +1,5 @@
 BEFORE ADVERTISING
 Preview to some quizmasters, beta testers
-Add favicon
 
 OTHERS
 Handle images being 404s
@@ -12,9 +11,7 @@ Clean up code
 Animate transitions
 Fancier font
 Make answer column optional
-Use key in place of keyCode?
 Choose styling - save to localStorage
 Set footer text - save to localStorage
 Allow customise colours, add preview of slideshow
-Esc equivalent on touchscreen?
-Add Storybook
+Add Storybook?
