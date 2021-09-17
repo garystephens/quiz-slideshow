@@ -3,6 +3,8 @@ function trimDoubleQuotes(text) {
 }
 
 function removeNewLinesBetweenDoubleQuotes(text) {
+    // RegExp is from
+    // https://stackoverflow.com/questions/26337474/regexp-to-find-replace-newlines-within-double-quotes-not-affecting-newlines-out
     return text.replace(/("[^"\n]*)\r?\n(?!(([^"]*"){2})*[^"]*$)/g, '$1 ');
 }
 
@@ -11,8 +13,6 @@ function parseQuizDataString(questionData) {
         // Cells that contain newlines will be in the form "xxxxx\nxxxxx" enclosed
         // by quotes as shown.
         // We will remove such \n characters that lie between " " with spaces.
-        // RegExp is from
-        // https://stackoverflow.com/questions/26337474/regexp-to-find-replace-newlines-within-double-quotes-not-affecting-newlines-out
         questionData = removeNewLinesBetweenDoubleQuotes(questionData);
         questionData = removeNewLinesBetweenDoubleQuotes(questionData);
         questionData = removeNewLinesBetweenDoubleQuotes(questionData);
