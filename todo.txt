@@ -1,7 +1,5 @@
-BEFORE ADVERTISING
-Preview to some quizmasters, beta testers
-
 OTHERS
+Handle questions that start with "
 Handle images being 404s
 Persist title text to localStorage
 Add link to answers from question summary slide?
