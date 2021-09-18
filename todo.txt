@@ -1,6 +1,3 @@
-TS CONVERASION
-Are there packages we don't need?
-
 OTHERS
 Handle questions that start with "
 Handle images being 404s
