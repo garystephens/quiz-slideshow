@@ -1,19 +1,39 @@
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 // Special version of a <textarea> tag where the contents are hidden from view,
 // except for when it has focus.
 
-const TextArea = styled.textarea`
+type Props = {
+    defaultValue: string;
+    coveringText: string;
+    onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+    width: string;
+    height: string;
+};
+
+const TextArea = styled.textarea<{
+    defaultValue: string;
+    onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
+    onBlur?: React.FocusEventHandler<HTMLTextAreaElement>;
+    ref?: React.RefObject<HTMLTextAreaElement>;
+    width: string;
+    height: string;
+}>`
     width: ${(props) => props.width};
     height: ${(props) => props.height};
 `;
-const CoveringTextarea = styled(TextArea)`
+
+const CoveringTextarea = styled(TextArea)<{
+    defaultValue: string;
+    onFocus?: React.FocusEventHandler<HTMLTextAreaElement>;
+    width: string;
+    height: string;
+}>`
     font-style: italic;
 `;
 
-function TextareaForSensitiveContent(props) {
+const TextareaForSensitiveContent: React.FC<Props> = (props: Props) => {
     const [isCoveringTextShown, setIsCoveringTextShown] = useState(true);
     const realTextarea = useRef(null);
 
@@ -53,14 +73,6 @@ function TextareaForSensitiveContent(props) {
             )}
         </div>
     );
-}
-
-TextareaForSensitiveContent.propTypes = {
-    defaultValue: PropTypes.string.isRequired,
-    coveringText: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,
-    width: PropTypes.string.isRequired,
-    height: PropTypes.string.isRequired,
 };
 
 export default TextareaForSensitiveContent;

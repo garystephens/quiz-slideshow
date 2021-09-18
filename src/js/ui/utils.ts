@@ -1,14 +1,16 @@
-function trimDoubleQuotes(text) {
+import Question from './types/Question';
+
+function trimDoubleQuotes(text: string): string {
     return text.replace(/^"/, '').replace(/"$/, '');
 }
 
-function removeNewLinesBetweenDoubleQuotes(text) {
+function removeNewLinesBetweenDoubleQuotes(text: string): string {
     // RegExp is from
     // https://stackoverflow.com/questions/26337474/regexp-to-find-replace-newlines-within-double-quotes-not-affecting-newlines-out
     return text.replace(/("[^"\n]*)\r?\n(?!(([^"]*"){2})*[^"]*$)/g, '$1 ');
 }
 
-function parseQuizDataString(questionData) {
+function parseQuizDataString(questionData: string): Question[] {
     try {
         // Cells that contain newlines will be in the form "xxxxx\nxxxxx" enclosed
         // by quotes as shown.
@@ -21,7 +23,7 @@ function parseQuizDataString(questionData) {
         questionData = questionData.replace(/""/g, '"');
 
         const questions = questionData.split('\n');
-        let questionsOutput = [];
+        const questionsOutput: Question[] = [];
         questions.forEach(function (question) {
             const questionData = question.split('\t');
             if (questionData.length >= 3) {

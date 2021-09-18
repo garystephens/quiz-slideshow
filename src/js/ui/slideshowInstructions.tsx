@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SlideshowInstructions() {
+const SlideshowInstructions: React.FC = () => {
     return (
         <div>
             <em>Slideshow Controls</em>
@@ -16,8 +16,6 @@ function SlideshowInstructions() {
             <em>Exit slideshow</em>: press <em>Esc</em> or <em>X</em>
         </div>
     );
-}
-
-SlideshowInstructions.propTypes = {};
+};
 
 export default SlideshowInstructions;

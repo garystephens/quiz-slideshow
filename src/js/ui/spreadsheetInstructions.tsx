@@ -7,7 +7,7 @@ const Instructions = styled.div`
     padding: ${(props) => props.theme.boxPadding};
 `;
 
-function SpreadsheetInstructions() {
+const SpreadsheetInstructions: React.FC = () => {
     return (
         <Instructions>
             <em>How to copy questions from a spreadsheet</em>
@@ -21,7 +21,7 @@ function SpreadsheetInstructions() {
             <br />
             <br />
             The columns in the spreadsheet data you copy must be, in order:
-            <ol>
+            <ol type="A">
                 <li>
                     <em>Question Number</em> (if cells are left blank,
                     we&apos;ll automatically assign the numbers 1, 2, 3, etc.)
@@ -35,7 +35,7 @@ function SpreadsheetInstructions() {
                 </li>
             </ol>
             and optionally:
-            <ol start="4">
+            <ol type="A" start={4}>
                 <li>
                     <em>Question Image</em> - web address (URL) of image to be
                     shown alongside the question and answer (unless a different
@@ -59,8 +59,6 @@ function SpreadsheetInstructions() {
             </em>
         </Instructions>
     );
-}
-
-SpreadsheetInstructions.propTypes = {};
+};
 
 export default SpreadsheetInstructions;

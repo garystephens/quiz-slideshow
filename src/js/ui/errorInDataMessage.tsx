@@ -7,7 +7,7 @@ const Error = styled.div`
     margin-top: 10px;
 `;
 
-function ErrorInDataMessage() {
+const ErrorInDataMessage: React.FC = () => {
     return (
         <Error>
             Hmmm, the data you pasted in doesn&apos;t look right.
@@ -16,8 +16,6 @@ function ErrorInDataMessage() {
             instructed.
         </Error>
     );
-}
-
-ErrorInDataMessage.propTypes = {};
+};
 
 export default ErrorInDataMessage;

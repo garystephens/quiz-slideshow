@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styled from 'styled-components';
-import { questionNumberToShow } from './utils.js';
+
+import { questionNumberToShow } from './utils';
+import Question from '../types/Question';
 
 const StyledSummaryTable = styled.table`
     font-size: 3vmin;
@@ -19,7 +20,12 @@ const SummaryCell = styled.td`
     padding: 1vmin;
 `;
 
-function SummaryTable(props) {
+type Props = {
+    quizDataAsArray: Question[];
+    showAnswers: boolean;
+};
+
+const SummaryTable: React.FC<Props> = (props: Props) => {
     return (
         <StyledSummaryTable>
             <tbody>
@@ -47,11 +53,6 @@ function SummaryTable(props) {
             </tbody>
         </StyledSummaryTable>
     );
-}
-
-SummaryTable.propTypes = {
-    quizDataAsArray: PropTypes.array,
-    showAnswers: PropTypes.bool.isRequired,
 };
 
 export default SummaryTable;

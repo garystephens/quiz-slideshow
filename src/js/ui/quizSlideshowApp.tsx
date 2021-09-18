@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-import theme from './theme.js';
-import SpreadsheetInstructions from './spreadsheetInstructions.js';
-import Introduction from './introduction.js';
-import Slideshow from './slideshow/slideshow.js';
-import TextAreaForSensitiveContent from './textareaForSensitiveContent.js';
-import SlideshowInstructions from './slideshowInstructions.js';
-import ErrorInDataMessage from './errorInDataMessage.js';
-import { parseQuizDataString } from './utils.js';
-import { sampleQuizQuestionsAsString } from './sampleQuestions.js';
+import theme from './theme';
+import EndSlideShow from './interfaces/EndSlideShow';
+import SpreadsheetInstructions from './spreadsheetInstructions';
+import Introduction from './introduction';
+import Slideshow from './slideshow/slideshow';
+import TextAreaForSensitiveContent from './textareaForSensitiveContent';
+import SlideshowInstructions from './slideshowInstructions';
+import ErrorInDataMessage from './errorInDataMessage';
+import { parseQuizDataString } from './utils';
+import { sampleQuizQuestionsAsString } from './sampleQuestions';
 
 const GlobalStyles = createGlobalStyle`
     em {
@@ -74,7 +75,7 @@ const TitleSlideTextInput = styled.input`
     width: 90%;
 `;
 
-function QuizSlideshowApp() {
+const QuizSlideshowApp: React.FC = () => {
     const [quizTitle, setQuizTitle] = useState('Sample Quiz - Round 1');
     const [quizDataAsString, setQuizDataAsString] = useState(
         sampleQuizQuestionsAsString
@@ -89,31 +90,35 @@ function QuizSlideshowApp() {
     const [isSlideshowVisible, setIsSlideshowVisible] = useState(false);
     const [showAnswers, setShowAnswers] = useState(false);
 
-    function startSlideshow() {
+    function startSlideshow(): void {
         setIsSlideshowVisible(true);
     }
 
-    function startSlideshowWithoutAnswers() {
+    function startSlideshowWithoutAnswers(): void {
         setShowAnswers(false);
         startSlideshow();
     }
 
-    function startSlideshowWithAnswers() {
+    function startSlideshowWithAnswers(): void {
         setShowAnswers(true);
         startSlideshow();
     }
 
-    function handleChangeToQuizDataAsString(e) {
-        setQuizDataAsString(e.target.value);
+    function handleChangeToQuizDataAsString(
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ): void {
+        setQuizDataAsString(event.target.value);
     }
 
-    function handleChangeToQuizTitle(e) {
-        setQuizTitle(e.target.value);
+    function handleChangeToQuizTitle(
+        event: React.ChangeEvent<HTMLInputElement>
+    ): void {
+        setQuizTitle(event.target.value);
     }
 
-    function hideSlideshow() {
+    const hideSlideshow: EndSlideShow = function (): void {
         setIsSlideshowVisible(false);
-    }
+    };
 
     return (
         <ThemeProvider theme={theme}>
@@ -178,8 +183,6 @@ function QuizSlideshowApp() {
             )}
         </ThemeProvider>
     );
-}
-
-QuizSlideshowApp.propTypes = {};
+};
 
 export default QuizSlideshowApp;

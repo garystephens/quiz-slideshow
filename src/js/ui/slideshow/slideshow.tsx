@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import useKeypress from 'react-use-keypress';
 import styled from 'styled-components';
 
-import PressEscToExit from './pressEscToExit.js';
-import SummaryTable from './summaryTable.js';
-import { questionNumberToShow } from './utils.js';
+import EndSlideShow from '../interfaces/EndSlideShow';
+import Question from '../types/Question';
+import PressEscToExit from './pressEscToExit';
+import SummaryTable from './summaryTable';
+import { questionNumberToShow } from './utils';
 
 const Title = styled.div`
     font-weight: bold;
@@ -91,7 +92,14 @@ const FooterText = styled.div`
     color: #666666;
 `;
 
-function Slideshow(props) {
+type Props = {
+    quizTitle: string;
+    quizDataAsArray: Question[];
+    showAnswers: boolean;
+    onEndSlideshow: EndSlideShow;
+};
+
+const Slideshow: React.FC<Props> = (props: Props) => {
     const [slideIndex, setSlideIndex] = useState(0);
 
     useKeypress(
@@ -111,7 +119,7 @@ function Slideshow(props) {
             ' ',
             'Spacebar',
         ],
-        (event) => {
+        (event: React.KeyboardEvent) => {
             switch (event.key) {
                 case 'Escape':
                 case 'Esc':
@@ -137,46 +145,46 @@ function Slideshow(props) {
         }
     );
 
-    function maxSlideIndex() {
-        const questionByQuestionSlideCount =
+    function maxSlideIndex(): number {
+        const questionByQuestionSlideCount: number =
             props.quizDataAsArray.length * (props.showAnswers ? 2 : 1);
         const titleSlideCount = 1;
         const summarySlideCount = 1;
-        const slideCount =
+        const slideCount: number =
             titleSlideCount + questionByQuestionSlideCount + summarySlideCount;
-        const maxSlideIndex = slideCount - 1;
+        const maxSlideIndex: number = slideCount - 1;
         return maxSlideIndex;
     }
 
-    function isTitleSlide() {
+    function isTitleSlide(): boolean {
         return slideIndex === 0;
     }
 
-    function isSummarySlide() {
+    function isSummarySlide(): boolean {
         return slideIndex === maxSlideIndex();
     }
 
-    function isQuestionOrAnswerSlide() {
+    function isQuestionOrAnswerSlide(): boolean {
         return !isTitleSlide() && !isSummarySlide();
     }
 
-    function isAnswerSlide() {
+    function isAnswerSlide(): boolean {
         return slideIndex % 2 === 0;
     }
 
-    function incrementSlideIndex() {
+    function incrementSlideIndex(): void {
         if (slideIndex < maxSlideIndex()) {
             setSlideIndex(slideIndex + 1);
         }
     }
 
-    function decrementSlideIndex() {
+    function decrementSlideIndex(): void {
         if (slideIndex > 0) {
             setSlideIndex(slideIndex - 1);
         }
     }
 
-    function questionIndex() {
+    function questionIndex(): number {
         if (props.showAnswers) {
             return Math.floor((slideIndex - 1) / 2);
         } else {
@@ -184,15 +192,15 @@ function Slideshow(props) {
         }
     }
 
-    function questionTextToShow() {
+    function questionTextToShow(): string {
         return props.quizDataAsArray[questionIndex()].questionText;
     }
 
-    function imageToShow() {
+    function imageToShow(): string {
         if (props.showAnswers) {
-            const answerImage =
+            const answerImage: string =
                 props.quizDataAsArray[questionIndex()].answerImage;
-            const questionImage =
+            const questionImage: string =
                 props.quizDataAsArray[questionIndex()].questionImage;
             if (
                 isAnswerSlide() &&
@@ -208,8 +216,8 @@ function Slideshow(props) {
         }
     }
 
-    function answerTextToShow() {
-        if (props.showAnswers & isAnswerSlide()) {
+    function answerTextToShow(): string {
+        if (props.showAnswers && isAnswerSlide()) {
             return props.quizDataAsArray[questionIndex()].answerText;
         } else {
             return '';
@@ -260,13 +268,6 @@ function Slideshow(props) {
             <FooterText>garystephens.github.io/quiz-slideshow</FooterText>
         </StyledSlideshow>
     );
-}
-
-Slideshow.propTypes = {
-    quizTitle: PropTypes.string.isRequired,
-    quizDataAsArray: PropTypes.array,
-    showAnswers: PropTypes.bool.isRequired,
-    onEndSlideshow: PropTypes.func.isRequired,
 };
 
 export default Slideshow;

@@ -8,7 +8,7 @@ const Introduction = styled.div`
     margin-bottom: 10px;
 `;
 
-function QuizSlideshowIntroduction() {
+const QuizSlideshowIntroduction: React.FC = () => {
     return (
         <Introduction>
             <div style={{ float: 'right', paddingLeft: '8px' }}>
@@ -27,11 +27,9 @@ function QuizSlideshowIntroduction() {
             <br />
             Press the buttons below to see a sample quiz round...
             <br />
-            <div style={{ clear: 'both ' }}></div>
+            <div style={{ clear: 'both' }}></div>
         </Introduction>
     );
-}
-
-QuizSlideshowIntroduction.propTypes = {};
+};
 
 export default QuizSlideshowIntroduction;

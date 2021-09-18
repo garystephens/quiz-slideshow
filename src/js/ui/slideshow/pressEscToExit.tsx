@@ -17,7 +17,7 @@ const PressEscapeToExitWrapper = styled.div`
     width: 100%;
 `;
 
-function PressEscToExit() {
+const PressEscToExit: React.FC = () => {
     const divToFadeOut = useRef(null);
 
     function fadeOutPressEscapeToExitMessage() {
@@ -37,6 +37,6 @@ function PressEscToExit() {
             </PressEscapeToExitText>
         </PressEscapeToExitWrapper>
     );
-}
+};
 
 export default PressEscToExit;

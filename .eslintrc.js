@@ -5,8 +5,10 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
+        'plugin:@typescript-eslint/recommended',
     ],
-    plugins: ['react', 'react-hooks'],
+    parser: '@typescript-eslint/parser',
+    plugins: ['react', 'react-hooks', '@typescript-eslint'],
     env: {
         browser: true,
         es6: true,

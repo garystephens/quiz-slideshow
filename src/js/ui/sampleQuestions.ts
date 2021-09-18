@@ -1,4 +1,4 @@
-const sampleQuizQuestionsAsString =
+const sampleQuizQuestionsAsString: string =
     [
         '1',
         'Who is the only person to have won four Best Actress Oscars?',
