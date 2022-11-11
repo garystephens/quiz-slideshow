@@ -8,7 +8,8 @@
         "build": "webpack --mode production",
         "start": "cross-env NODE_ENV=dev webpack-dev-server --mode development --env development --open",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist"
+        "deploy": "gh-pages -d dist",
+        "eslint": "eslint . --format visualstudio"
     },
     "repository": {
         "type": "git",
