@@ -12,7 +12,7 @@ module.exports = {
     target: process.env.NODE_ENV === 'dev' ? 'web' : ['web', 'es5'],
     devtool: 'source-map',
     devServer: {
-        contentBase: './dist',
+        static: './dist',
     },
     plugins: [
         new CleanWebpackPlugin(),
