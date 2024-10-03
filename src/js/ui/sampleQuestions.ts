@@ -4,14 +4,14 @@ const sampleQuizQuestionsAsString: string =
         'Who is the only person to have won four Best Actress Oscars?',
         'Katherine Hepburn',
         'https://img.cinemablend.com/filter:scale/quill/4/d/2/5/7/8/4d257854a4bf05b675703332398612c0ad89d1b6.jpg',
-        'https://en.24smi.org/public/media/2019/5/21/01-wbtvwio.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Katharine_Hepburn_publicity_photograph.jpg/800px-Katharine_Hepburn_publicity_photograph.jpg',
     ].join('\t') +
     '\n' +
     [
         '2',
         '"Which Olympic sport combines cross-country skiing and rifle shooting?"',
         'Biathlon',
-        'https://www.nydailynews.com/resizer/nPhEppVtJM04awPbKjOLH2D6gMY=/415x302/top/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/QYGL5ZRWNC7IT4O4HSDSOZV7LE.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/b/b3/Biathlon_Schalke.jpg',
         '',
     ].join('\t') +
     '\n' +
@@ -40,7 +40,7 @@ const sampleQuizQuestionsAsString: string =
         'Andre Agassi has been married to which fellow tennis player since 2001?',
         'Steffi Graf',
         '',
-        'https://www.tennisworldusa.org/imge/77101/andre-agassi-i-hope-to-spend-20-more-years-with-wife-steffi-graf.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/f/f0/Steffi_Graf_in_Hamburg_2010_%28cropped%29.jpg',
     ].join('\t') +
     '\n' +
     [
